@@ -52,7 +52,6 @@ const deleteGame = async (req,res) => {
     const {id} = req.params;
     try {
         const game = await Game.findByIdAndDelete(id)
-        console.log(game)
         res.json({msg: 'Game Deleted'});
     } catch (error) {
         res.status(400).json({ msg: error})
