@@ -20,7 +20,7 @@ npm run dev --desarrollo
 - en el archivo .env se encuentra el puerto y la conexión al cluster de MongoDB para realizar pruebas locales
 - Dentro del repo se encuentra la colección de postman con todos los metodos listo para probar al entorno online
 - Para fines de pruebas resulta mas sencillo probar desde postman al entorno antes mencionado.
-- Para correr los test es necesario tener instalado MongoCompass y conectar con la coleccion de bases que se encuentra en el archivo .env
+- Para correr los test puede que sea necesario tener instalado Mongo en local.
 
 ## Testing
 Ejecutar para realizar los test
@@ -29,3 +29,4 @@ npm run test
 ```
 
 -------------------------------------
+Ante cualquier duda mi email : patribottino95@gmail.com
