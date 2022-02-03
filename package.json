@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .", 
     "dev": "cross-env NODE_ENV=dev nodemon .",
-    "test": "jest --forceExit"
+    "test": "cross-env NODE_ENV=dev jest --forceExit"
   },
   "author": "Patricio Denis Bottino",
   "license": "ISC",
