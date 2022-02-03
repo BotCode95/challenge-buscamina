@@ -99,6 +99,37 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Actualizar Partida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playerName\" : \"Luis Armando\",\r\n    \"points\" : \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gamebuscamina.herokuapp.com/api/game/61fae54d9795e1f95e94aeae",
+					"protocol": "https",
+					"host": [
+						"gamebuscamina",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"game",
+						"61fae54d9795e1f95e94aeae"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
