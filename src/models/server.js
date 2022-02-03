@@ -5,7 +5,7 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port = process.env.NODE_ENV === 'prod' ? process.env.PORT : process.env.PORT_DEVELOPMENT;
+        this.port = process.env.NODE_ENV === 'dev' ? process.env.PORT_DEVELOPMENT : process.env.PORT;
 
         this.gamePath = '/api/game';
 

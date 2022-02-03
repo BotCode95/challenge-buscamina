@@ -4,7 +4,7 @@
   "description": "Juego Buscamina",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV= prod node .",
+    "start": "node .", 
     "dev": "cross-env NODE_ENV=dev nodemon .",
     "test": "jest --forceExit"
   },
