@@ -3,7 +3,8 @@ const {Schema, model} = require('mongoose')
 const GameSchema = Schema({
     playerName : {
         type: String,
-        default: 'Anonymous'
+        required: true
+        // default: 'Anonymous'
     },
     points : {
         type: Number,

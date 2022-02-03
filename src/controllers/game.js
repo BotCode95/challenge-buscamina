@@ -3,7 +3,7 @@ const Game = require('../models/game');
 
 const getGame = async (req,res) => {
     try {
-        game = new Game()
+        game = new Game({playerName: 'Player'});
         await game.save();
         res.json({
             msg: 'New Game',
@@ -11,15 +11,14 @@ const getGame = async (req,res) => {
         });
     } catch (error) {
     
-    res.status(400).json({ msg: error})
+    res.status(400).json({ msg: error});
     }
 }
 const getGameById = async (req,res) => {
     const {id} = req.params;
     try {
-        
         var message = 'Continue Game'
-        const game = await Game.findById(id)
+        const game = await Game.findById(id);
         res.json({
             msg: message,
             game
@@ -27,14 +26,14 @@ const getGameById = async (req,res) => {
 
     } catch (error) {
         
-        res.status(400).json({ msg: error})
+        res.status(400).json({ msg: error});
     }
 }
 
 const createGame = async (req,res) => {
     const {playerName, points} = req.body;
     try {
-        const game = new Game({playerName, points})
+        const game = new Game({playerName, points});
 
         await game.save();
 
@@ -44,17 +43,29 @@ const createGame = async (req,res) => {
         });
     } catch (error) {
         
-        res.status(400).json({ msg: error})
+        res.status(400).json({ msg: error});
+    }
+}
+
+const updateGame = async (req,res) => {
+    const {id} = req.params;
+    const {_id, ...restParams} = req.body;
+    try {
+        const game = await Game.findByIdAndUpdate(id, restParams);
+        res.json({msg: 'update game',game});
+    } catch (error) {
+        
+        res.status(400).json({ msg: error});
     }
 }
 
 const deleteGame = async (req,res) => {
     const {id} = req.params;
     try {
-        const game = await Game.findByIdAndDelete(id)
+        const game = await Game.findByIdAndDelete(id);
         res.json({msg: 'Game Deleted'});
     } catch (error) {
-        res.status(400).json({ msg: error})
+        res.status(400).json({ msg: error});
     }
 }
 
@@ -62,5 +73,6 @@ module.exports = {
     getGame,
     getGameById,
     createGame,
+    updateGame,
     deleteGame
 }

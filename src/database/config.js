@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
 
 const dbConnection = async() => {
     try {
@@ -6,10 +7,11 @@ const dbConnection = async() => {
             useNewUrlParser:true,
             useUnifiedTopology:true,
         })
-        console.log('Base de datos online')
+        // console.log('Base de datos online')
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
 module.exports = {dbConnection};
+

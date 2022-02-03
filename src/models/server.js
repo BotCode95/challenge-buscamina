@@ -1,6 +1,6 @@
-const cors = require('cors')
-const express =require('express')
-const {dbConnection} = require('../database/config')
+const cors = require('cors');
+const express =require('express');
+const {dbConnection} = require('../database/config');
 class Server {
 
     constructor() {
@@ -22,8 +22,8 @@ class Server {
     }
     
     middlewares(){
-        this.app.use(cors())
-        this.app.use(express.json())
+        this.app.use(cors());
+        this.app.use(express.json());
     }
     routes() {
         this.app.use(this.gamePath, require('../routes/game'));
@@ -31,8 +31,8 @@ class Server {
 
     listen() {
         this.app.listen(this.port, () => {
-            console.log(`escuchando en el puerto ${this.port}`)
-        })
+            console.log(`server is running on port ${this.port}`);
+        });
     }
 }
 
